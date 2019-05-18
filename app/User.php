@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    // setting the relation between user and role models, we have a role for the user
     public function role(){
         return $this->belongsTo('App\Role');
     }

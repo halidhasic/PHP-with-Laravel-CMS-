@@ -13,4 +13,24 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('app.scss');
+    // compiling bootstrap css and js styles into one file with gulp
+    styles([
+        'libs/blog-post.css',
+        'libs/bootstrap.css',
+        'libs/bootstrap.min.css',
+        'libs/font-awesome.css',
+        'libs/metisMenu.css',
+        'libs/sb-admin-2.css',
+        'libs/styles.css'
+    ], './public/js/libs.css').scripts([
+        'libs/bootstrap.js',
+        'libs/bootstrap.min.js',
+        'libs/jquery.js',
+        'libs/metisMenu.js',
+        'libs/sb-admin-2.js',
+        'libs/scripts.js'
+    ], './public/js/libs.js')
+
 });
+
+// https://github.com/SharePoint/sp-dev-fx-webparts/issues/501 visit

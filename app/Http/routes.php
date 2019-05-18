@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+// we can create route group to group our controller here
+// here we must think/consider what kind of routes do we want for the admin
+// something like public/admin/users or public/author/posts
+Route::resource('admin/users', 'AdminUsersController');
